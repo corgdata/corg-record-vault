@@ -1,0 +1,298 @@
+{
+  "contractName": "AuditAnchor",
+  "sourceName": "contracts/AuditAnchor.sol",
+  "compilerVersion": "0.8.30+commit.73712a01.Emscripten.clang",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "root",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint64",
+          "name": "fromSeq",
+          "type": "uint64"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint64",
+          "name": "toSeq",
+          "type": "uint64"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "anchorer",
+          "type": "address"
+        }
+      ],
+      "name": "Anchored",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "root",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint64",
+          "name": "fromSeq",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint64",
+          "name": "toSeq",
+          "type": "uint64"
+        }
+      ],
+      "name": "anchor",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "anchorCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "getAnchor",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "root",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint64",
+          "name": "fromSeq",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint64",
+          "name": "toSeq",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint64",
+          "name": "anchoredAt",
+          "type": "uint64"
+        },
+        {
+          "internalType": "address",
+          "name": "anchorer",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b506104068061001f6000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c806334f96c8c146100465780634c7df18f1461005d578063755c698a146100b0575b600080fd5b6000545b6040519081526020015b60405180910390f35b61007061006b366004610348565b6100c3565b6040805195865267ffffffffffffffff94851660208701529284169285019290925290911660608301526001600160a01b0316608082015260a001610054565b61004a6100be36600461037e565b610135565b600080600080600080600087815481106100df576100df6103ba565b6000918252602090912060039091020180546001820154600290920154909967ffffffffffffffff8084169a50600160401b840481169950600160801b90930490921696506001600160a01b0316945092505050565b6000836101765760405162461bcd60e51b815260206004820152600a602482015269195b5c1d1e481c9bdbdd60b21b60448201526064015b60405180910390fd5b8267ffffffffffffffff168267ffffffffffffffff1610156101c85760405162461bcd60e51b815260206004820152600b60248201526a656d7074792072616e676560a81b604482015260640161016d565b50600080546040805160a08101825286815267ffffffffffffffff86811660208084018281528884168587018181524286166060808901918252336080808b0182815260018e018f559d8052995160038d027f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e56381019190915595517f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e56487018054955194518b16600160801b0267ffffffffffffffff60801b19958c16600160401b026fffffffffffffffffffffffffffffffff1990971692909b169190911794909417929092169790971790915598517f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e56590920180546001600160a01b039093166001600160a01b03199093169290921790915585518b81529182019290925293840152820193909352909182917f950da6bae35cd4abb60e8287621eebbe3a9fbbc1df97ea81aa61041f6407d06b910160405180910390a29392505050565b60006020828403121561035a57600080fd5b5035919050565b803567ffffffffffffffff8116811461037957600080fd5b919050565b60008060006060848603121561039357600080fd5b833592506103a360208501610361565b91506103b160408501610361565b90509250925092565b634e487b7160e01b600052603260045260246000fdfea26469706673582212209a27584a0219889f55a72309beaf216079832ee103b5692fb72c21ed8ae2d5ea64736f6c634300081e0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c806334f96c8c146100465780634c7df18f1461005d578063755c698a146100b0575b600080fd5b6000545b6040519081526020015b60405180910390f35b61007061006b366004610348565b6100c3565b6040805195865267ffffffffffffffff94851660208701529284169285019290925290911660608301526001600160a01b0316608082015260a001610054565b61004a6100be36600461037e565b610135565b600080600080600080600087815481106100df576100df6103ba565b6000918252602090912060039091020180546001820154600290920154909967ffffffffffffffff8084169a50600160401b840481169950600160801b90930490921696506001600160a01b0316945092505050565b6000836101765760405162461bcd60e51b815260206004820152600a602482015269195b5c1d1e481c9bdbdd60b21b60448201526064015b60405180910390fd5b8267ffffffffffffffff168267ffffffffffffffff1610156101c85760405162461bcd60e51b815260206004820152600b60248201526a656d7074792072616e676560a81b604482015260640161016d565b50600080546040805160a08101825286815267ffffffffffffffff86811660208084018281528884168587018181524286166060808901918252336080808b0182815260018e018f559d8052995160038d027f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e56381019190915595517f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e56487018054955194518b16600160801b0267ffffffffffffffff60801b19958c16600160401b026fffffffffffffffffffffffffffffffff1990971692909b169190911794909417929092169790971790915598517f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e56590920180546001600160a01b039093166001600160a01b03199093169290921790915585518b81529182019290925293840152820193909352909182917f950da6bae35cd4abb60e8287621eebbe3a9fbbc1df97ea81aa61041f6407d06b910160405180910390a29392505050565b60006020828403121561035a57600080fd5b5035919050565b803567ffffffffffffffff8116811461037957600080fd5b919050565b60008060006060848603121561039357600080fd5b833592506103a360208501610361565b91506103b160408501610361565b90509250925092565b634e487b7160e01b600052603260045260246000fdfea26469706673582212209a27584a0219889f55a72309beaf216079832ee103b5692fb72c21ed8ae2d5ea64736f6c634300081e0033",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.30+commit.73712a01"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "index",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "bytes32",
+              "name": "root",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint64",
+              "name": "fromSeq",
+              "type": "uint64"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint64",
+              "name": "toSeq",
+              "type": "uint64"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "anchorer",
+              "type": "address"
+            }
+          ],
+          "name": "Anchored",
+          "type": "event"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "root",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint64",
+              "name": "fromSeq",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "toSeq",
+              "type": "uint64"
+            }
+          ],
+          "name": "anchor",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "index",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "anchorCount",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "index",
+              "type": "uint256"
+            }
+          ],
+          "name": "getAnchor",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "root",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint64",
+              "name": "fromSeq",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "toSeq",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "anchoredAt",
+              "type": "uint64"
+            },
+            {
+              "internalType": "address",
+              "name": "anchorer",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        }
+      ],
+      "devdoc": {
+        "details": "The audit events themselves stay off-chain in the gateway's database.      Anchoring stores only a Merkle root over a contiguous range of events,      so later edits, insertions, or deletions inside an anchored range are      detectable by recomputing the root from the stored rows and comparing.      This contract is a companion to MedicalRecordsRegistry; it is not the      canonical registry and holds no consent state.",
+        "kind": "dev",
+        "methods": {},
+        "title": "AuditAnchor",
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "anchor(bytes32,uint64,uint64)": {
+            "notice": "Anchor a Merkle root over the audit-event sequence range [fromSeq, toSeq]."
+          }
+        },
+        "notice": "Tamper-evidence anchors for the Record Vault gateway audit log.",
+        "version": 1
+      }
+    },
+    "settings": {
+      "compilationTarget": {
+        "contracts/AuditAnchor.sol": "AuditAnchor"
+      },
+      "evmVersion": "paris",
+      "libraries": {},
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "remappings": []
+    },
+    "sources": {
+      "contracts/AuditAnchor.sol": {
+        "keccak256": "0xe0fd8441c719698bb293a1182492b8a6df464cd913db9eb29ff35a2d2f24a459",
+        "license": "MIT",
+        "urls": [
+          "bzz-raw://753f6e97d16e4302449677a38816512d626141df5f73ecca819fbd32b01385a2",
+          "dweb:/ipfs/QmcsACZ5cguFVnqGXsJdb5p99629AU9bhAvLp4SPj7pk3K"
+        ]
+      }
+    },
+    "version": 1
+  }
+}
