@@ -1,0 +1,13 @@
+node_modules/
+.data/
+.env
+.env.*
+*.log
+coverage/
+*.sqlite*
+*.key
+test-output/
+dist/
+zk/node_modules/
+zk/build/
+zk/tools/

@@ -1,0 +1,11 @@
+# Findings left unchanged
+
+- **0.2.1 additions:** Docker packaging is shipped unexecuted — the release environment has no Docker, so `docker compose up` was not run; the compose file documents the host-networking requirement and the Docker Desktop caveat instead of claiming a verified container run. The `zk/` consent-proof prototype is not integrated into the gateway (documented integration path in `zk/README.md` and `docs/ARCHITECTURE.md`), and its Groth16 setup is a single-contributor development ceremony, not a production trusted setup. Audit anchoring makes anchored ranges tamper-evident but does not move audit events on-chain or make the unanchored tail independently verifiable.
+
+- **Canonical upstream provenance:** the original bundle supplied no reviewed upstream commit identifier. The new offline guard detects bundled source/artifact drift, not changes to remote HEAD or coordinated replacement of both. No upstream logic was fetched or silently substituted; deliberate canonical resync remains a reviewed action.
+- **Other operating systems:** clean installation, compilation, frontend build, tests and startup were executed on Linux. Darwin/Windows optional packages remain in the lockfile, but those operating systems were not available for execution; cross-platform test success is not claimed.
+- **SQLite and Ganache environment notices:** retained the existing versions and functionality. Experimental SQLite and successful native-to-JavaScript networking fallback remain visible, explicitly classified in test output. Replacing either implementation would exceed this maintenance scope.
+- **Prototype security/operations limits:** demo key custody, gateway plaintext access, browser same-origin keys, non-atomic chain/file/database operations and lack of independent audit remain documented. Addressing these requires architecture/security decisions outside the requested fixes.
+- **Host npm configuration:** this environment prints `Unknown env config "http-proxy"`. Installation succeeds; machine-level configuration was not changed or bundled.
+
+No production readiness, regulatory compliance, external audit, new browser UI review, or public deployment is claimed by this maintenance run. Synthetic data only.

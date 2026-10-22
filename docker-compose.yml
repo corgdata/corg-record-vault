@@ -1,0 +1,20 @@
+# One-command demo:  docker compose up --build   then open http://127.0.0.1:3000
+#
+# network_mode: host is deliberate. The vault refuses non-loopback origins
+# and binds 127.0.0.1 only; host networking keeps that exact posture while
+# making the demo reachable from the host browser. Host networking is a
+# Linux feature — on Docker Desktop (macOS/Windows) this file needs the
+# default bridge plus a port mapping instead, which the loopback-only bind
+# will not answer; run the demo natively there (npm start).
+services:
+  vault:
+    build: .
+    network_mode: host
+    environment:
+      PORT: "3000"
+    volumes:
+      - vault-data:/app/.data
+    restart: "no"
+
+volumes:
+  vault-data:

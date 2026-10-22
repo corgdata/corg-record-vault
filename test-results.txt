@@ -1,0 +1,250 @@
+
+> corg-record-vault@0.2.1 pretest
+> npm run check-contract
+
+
+> corg-record-vault@0.2.1 check-contract
+> node scripts/check-contract.mjs
+
+Contract drift guard PASS: deployed bytecode matches committed artifact (3732 bytes, including metadata).
+
+> corg-record-vault@0.2.1 test
+> node scripts/run-tests.mjs
+
+# ENVIRONMENT NOTE (non-fatal): Node SQLite ExperimentalWarning is informational; SQLite remains enabled.
+# ENVIRONMENT NOTE (non-fatal): Ganache may print "Cannot find module ... uws_*.node" followed by "Falling back to a NodeJS implementation". This pair is a supported JS fallback, not a failed test.
+# Diagnostics are preserved; assertion failures, failed imports and process errors still fail this command.
+TAP version 13
+# This version of µWS is not compatible with your Node.js build:
+# Error: Cannot find module '../binaries/uws_linux_x64_137.node'
+# Require stack:
+# - /home/hatch/workspace/publish-vault/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+# - /home/hatch/workspace/publish-vault/node_modules/ganache/dist/node/core.js
+# Falling back to a NodeJS implementation; performance may be degraded.
+# Subtest: merkle: roots are deterministic, proofs verify, edits change the root
+ok 1 - merkle: roots are deterministic, proofs verify, edits change the root
+  ---
+  duration_ms: 11.020674
+  type: 'test'
+  ...
+# Subtest: audit anchoring: anchor, verify, tamper detection, range isolation
+ok 2 - audit anchoring: anchor, verify, tamper detection, range isolation
+  ---
+  duration_ms: 1322.730147
+  type: 'test'
+  ...
+# This version of µWS is not compatible with your Node.js build:
+# Error: Cannot find module '../binaries/uws_linux_x64_137.node'
+# Require stack:
+# - /home/hatch/workspace/publish-vault/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+# - /home/hatch/workspace/publish-vault/node_modules/ganache/dist/node/core.js
+# Falling back to a NodeJS implementation; performance may be degraded.
+# Subtest: vault encrypts records with independent keys, private files and authenticated context
+ok 3 - vault encrypts records with independent keys, private files and authenticated context
+  ---
+  duration_ms: 47.463422
+  type: 'test'
+  ...
+# Subtest: authenticated encryption rejects a modified ciphertext and tag
+ok 4 - authenticated encryption rejects a modified ciphertext and tag
+  ---
+  duration_ms: 2.242127
+  type: 'test'
+  ...
+# Subtest: HTTP/EVM workflow: auth replay, signed update, revocation, isolation and encrypted storage
+ok 5 - HTTP/EVM workflow: auth replay, signed update, revocation, isolation and encrypted storage
+  ---
+  duration_ms: 1900.723348
+  type: 'test'
+  ...
+# Subtest: local chain, encrypted records and wallet identities survive a clean restart
+ok 6 - local chain, encrypted records and wallet identities survive a clean restart
+  ---
+  duration_ms: 447.842829
+  type: 'test'
+  ...
+# Subtest: real server boot smoke: patient create/open, clinician signed update, revoke and denial
+ok 7 - real server boot smoke: patient create/open, clinician signed update, revoke and denial
+  ---
+  duration_ms: 10137.836131
+  type: 'test'
+  ...
+# Actual startup entrypoint bound 127.0.0.1; HTTP workflow passed; temporary app/data removed by cleanup.
+# Subtest: browser workflow WebCrypto: encrypted read, signed append, revoke and isolation
+ok 8 - browser workflow WebCrypto: encrypted read, signed append, revoke and isolation
+  ---
+  duration_ms: 154.955761
+  type: 'test'
+  ...
+# Subtest: browser workflow portable AES-GCM: encrypted read, signed append, revoke and isolation
+ok 9 - browser workflow portable AES-GCM: encrypted read, signed append, revoke and isolation
+  ---
+  duration_ms: 62.504024
+  type: 'test'
+  ...
+# Subtest: drift guard accepts exact committed deployed bytecode without rewriting artifact
+ok 10 - drift guard accepts exact committed deployed bytecode without rewriting artifact
+  ---
+  duration_ms: 969.910998
+  type: 'test'
+  ...
+# Subtest: drift guard rejects changed source and mismatched artifact with nonzero process exit
+ok 11 - drift guard rejects changed source and mismatched artifact with nonzero process exit
+  ---
+  duration_ms: 2208.331608
+  type: 'test'
+  ...
+# This version of µWS is not compatible with your Node.js build:
+# Error: Cannot find module '../binaries/uws_linux_x64_137.node'
+# Require stack:
+# - /home/hatch/workspace/publish-vault/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+# - /home/hatch/workspace/publish-vault/node_modules/ganache/dist/node/core.js
+# Falling back to a NodeJS implementation; performance may be degraded.
+# Subtest: creation records ownership, immutable first version, and owner permissions
+ok 12 - creation records ownership, immutable first version, and owner permissions
+  ---
+  duration_ms: 634.80228
+  type: 'test'
+  ...
+# Subtest: unknown records deny access and metadata/version reads reject
+ok 13 - unknown records deny access and metadata/version reads reject
+  ---
+  duration_ms: 212.787766
+  type: 'test'
+  ...
+# Subtest: record identifiers are patient namespaced; duplicate creation cannot overwrite
+ok 14 - record identifiers are patient namespaced; duplicate creation cannot overwrite
+  ---
+  duration_ms: 233.610813
+  type: 'test'
+  ...
+# Subtest: zero commitments and ciphertext hashes are rejected on create and append
+ok 15 - zero commitments and ciphertext hashes are rejected on create and append
+  ---
+  duration_ms: 159.03006
+  type: 'test'
+  ...
+# Subtest: ungranted callers cannot append or manage permissions or archive
+ok 16 - ungranted callers cannot append or manage permissions or archive
+  ---
+  duration_ms: 205.225708
+  type: 'test'
+  ...
+# Subtest: read-only permission allows gateway read authorization but not append
+ok 17 - read-only permission allows gateway read authorization but not append
+  ---
+  duration_ms: 225.319971
+  type: 'test'
+  ...
+# Subtest: writer appends attributed version without modifying earlier version or gaining administration
+ok 18 - writer appends attributed version without modifying earlier version or gaining administration
+  ---
+  duration_ms: 285.726413
+  type: 'test'
+  ...
+# Subtest: compare-and-swap rejects stale and future versions; invalid indices reject
+ok 19 - compare-and-swap rejects stale and future versions; invalid indices reject
+  ---
+  duration_ms: 217.298081
+  type: 'test'
+  ...
+# Subtest: grants reject invalid masks, zero address, and expired grants
+ok 20 - grants reject invalid masks, zero address, and expired grants
+  ---
+  duration_ms: 182.645881
+  type: 'test'
+  ...
+# Subtest: grant expires exactly at expiresAt; expired writers cannot append
+ok 21 - grant expires exactly at expiresAt; expired writers cannot append
+  ---
+  duration_ms: 277.811404
+  type: 'test'
+  ...
+# Subtest: revocation immediately blocks read and write; a new explicit grant works
+ok 22 - revocation immediately blocks read and write; a new explicit grant works
+  ---
+  duration_ms: 343.830979
+  type: 'test'
+  ...
+# Subtest: global revoke invalidates all patient grants without affecting another patient
+ok 23 - global revoke invalidates all patient grants without affecting another patient
+  ---
+  duration_ms: 414.252054
+  type: 'test'
+  ...
+# Subtest: archiving disables owner and delegate policy access and writes; restoring preserves history
+ok 24 - archiving disables owner and delegate policy access and writes; restoring preserves history
+  ---
+  duration_ms: 306.537752
+  type: 'test'
+  ...
+# Subtest: metadata is publicly readable even without an access grant
+ok 25 - metadata is publicly readable even without an access grant
+  ---
+  duration_ms: 137.062925
+  type: 'test'
+  ...
+# Subtest: state-changing operations emit parseable events with record identifiers
+ok 26 - state-changing operations emit parseable events with record identifiers
+  ---
+  duration_ms: 314.303076
+  type: 'test'
+  ...
+# Subtest: write-only grants do not imply reads and replacement can downgrade a writer to reader
+ok 27 - write-only grants do not imply reads and replacement can downgrade a writer to reader
+  ---
+  duration_ms: 334.03858
+  type: 'test'
+  ...
+# Subtest: restore reactivates retained valid grants but not grants revoked while archived
+ok 28 - restore reactivates retained valid grants but not grants revoked while archived
+  ---
+  duration_ms: 432.083347
+  type: 'test'
+  ...
+# Subtest: global revoke covers multiple same-owner records, including archived ones, and isolates other patients
+ok 29 - global revoke covers multiple same-owner records, including archived ones, and isolates other patients
+  ---
+  duration_ms: 740.245129
+  type: 'test'
+  ...
+# Subtest: Darwin-only fsevents remains optional; esbuild platform packages are retained
+ok 30 - Darwin-only fsevents remains optional; esbuild platform packages are retained
+  ---
+  duration_ms: 8.832867
+  type: 'test'
+  ...
+# This version of µWS is not compatible with your Node.js build:
+# Error: Cannot find module '../binaries/uws_linux_x64_137.node'
+# Require stack:
+# - /home/hatch/workspace/publish-vault/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+# - /home/hatch/workspace/publish-vault/node_modules/ganache/dist/node/core.js
+# Falling back to a NodeJS implementation; performance may be degraded.
+# Subtest: FHIR export: bundle shape, Consent mirrors the chain grant, access is gated
+ok 31 - FHIR export: bundle shape, Consent mirrors the chain grant, access is gated
+  ---
+  duration_ms: 1893.264474
+  type: 'test'
+  ...
+# Subtest: test runner labels environment notices and preserves diagnostic output
+ok 32 - test runner labels environment notices and preserves diagnostic output
+  ---
+  duration_ms: 303.682123
+  type: 'test'
+  ...
+# Subtest: test runner propagates genuine test failure with a nonzero exit
+ok 33 - test runner propagates genuine test failure with a nonzero exit
+  ---
+  duration_ms: 339.255186
+  type: 'test'
+  ...
+1..33
+# tests 33
+# suites 0
+# pass 33
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 29216.762379
+TEST RESULT: PASS (exit 0). Environment notices above are non-fatal.
