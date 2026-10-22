@@ -1,0 +1,18 @@
+{
+  "author": "Clinical Outcomes Research Group, CORG LLC",
+  "description": "Prototype zero-knowledge consent proof for CORG Record Vault grants. Research code: see README.md for exactly what is and is not proven.",
+  "license": "MIT",
+  "name": "corg-zk-consent-proof",
+  "private": true,
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test --test-force-exit test/grant-proof.test.mjs"
+  },
+  "type": "module",
+  "version": "0.1.0",
+  "dependencies": {
+    "circomlib": "^2.0.5",
+    "circomlibjs": "^0.1.7",
+    "snarkjs": "^0.7.6"
+  }
+}
