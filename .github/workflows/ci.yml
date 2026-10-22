@@ -1,0 +1,39 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  clean-room:
+    name: Vault clean-room suite
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Clean install
+        run: npm ci
+      - name: Full test suite (includes both contract drift guards)
+        run: npm test
+
+  zk:
+    name: ZK consent-proof prototype
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Fetch the circom 2.1.9 binary (not committed, per zk/README.md)
+        run: |
+          curl -sL -o /tmp/circom https://github.com/iden3/circom/releases/download/v2.1.9/circom-linux-amd64
+          mkdir -p zk/tools
+          cp /tmp/circom zk/tools/circom
+          chmod +x zk/tools/circom
+      - name: Install, build (development ceremony), and test the prototype
+        run: |
+          npm --prefix zk install
+          npm --prefix zk run build
+          npm --prefix zk test
