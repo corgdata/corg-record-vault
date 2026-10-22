@@ -1,0 +1,10 @@
+✔ real server boot smoke: patient create/open, clinician signed update, revoke and denial (9411.584267ms)
+ℹ Actual startup entrypoint bound 127.0.0.1; HTTP workflow passed; temporary app/data removed by cleanup.
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9806.608677

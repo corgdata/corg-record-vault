@@ -1,0 +1,87 @@
+$ fresh directory: /workspace/scratch/ce06c34ba00b/cleanrooms/install-Ekvyve
+$ unzip -q step2.zip -d fresh-directory
+$ npm ci
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+added 425 packages in 15s
+$ npm run compile
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> corg-record-vault@0.2.0 compile
+> node scripts/compile.mjs
+
+Compiled MedicalRecordsRegistry: 3732 deployed bytes; solc 0.8.30+commit.73712a01.Emscripten.clang; Paris EVM.
+$ npm run build
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> corg-record-vault@0.2.0 build
+> node scripts/build.mjs
+
+Built Record Vault browser client.
+$ npm test
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> corg-record-vault@0.2.0 pretest
+> npm run compile
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> corg-record-vault@0.2.0 compile
+> node scripts/compile.mjs
+
+Compiled MedicalRecordsRegistry: 3732 deployed bytes; solc 0.8.30+commit.73712a01.Emscripten.clang; Paris EVM.
+
+> corg-record-vault@0.2.0 test
+> node --test test/*.test.mjs
+
+This version of µWS is not compatible with your Node.js build:
+
+Error: Cannot find module '../binaries/uws_linux_x64_137.node'
+Require stack:
+- /workspace/scratch/ce06c34ba00b/cleanrooms/install-Ekvyve/corg-record-vault/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+- /workspace/scratch/ce06c34ba00b/cleanrooms/install-Ekvyve/corg-record-vault/node_modules/ganache/dist/node/core.js
+Falling back to a NodeJS implementation; performance may be degraded.
+
+
+✔ vault encrypts records with independent keys, private files and authenticated context (7.367207ms)
+✔ authenticated encryption rejects a modified ciphertext and tag (0.51376ms)
+✔ HTTP/EVM workflow: auth replay, signed update, revocation, isolation and encrypted storage (1178.46437ms)
+✔ local chain, encrypted records and wallet identities survive a clean restart (292.742805ms)
+✔ browser workflow WebCrypto: encrypted read, signed append, revoke and isolation (109.445508ms)
+✔ browser workflow portable AES-GCM: encrypted read, signed append, revoke and isolation (54.437136ms)
+This version of µWS is not compatible with your Node.js build:
+
+Error: Cannot find module '../binaries/uws_linux_x64_137.node'
+Require stack:
+- /workspace/scratch/ce06c34ba00b/cleanrooms/install-Ekvyve/corg-record-vault/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+- /workspace/scratch/ce06c34ba00b/cleanrooms/install-Ekvyve/corg-record-vault/node_modules/ganache/dist/node/core.js
+Falling back to a NodeJS implementation; performance may be degraded.
+
+
+✔ creation records ownership, immutable first version, and owner permissions (395.28728ms)
+✔ unknown records deny access and metadata/version reads reject (175.504098ms)
+✔ record identifiers are patient namespaced; duplicate creation cannot overwrite (176.841484ms)
+✔ zero commitments and ciphertext hashes are rejected on create and append (133.659287ms)
+✔ ungranted callers cannot append or manage permissions or archive (152.532359ms)
+✔ read-only permission allows gateway read authorization but not append (156.1605ms)
+✔ writer appends attributed version without modifying earlier version or gaining administration (212.596688ms)
+✔ compare-and-swap rejects stale and future versions; invalid indices reject (188.101958ms)
+✔ grants reject invalid masks, zero address, and expired grants (126.032804ms)
+✔ grant expires exactly at expiresAt; expired writers cannot append (148.60373ms)
+✔ revocation immediately blocks read and write; a new explicit grant works (227.950964ms)
+✔ global revoke invalidates all patient grants without affecting another patient (302.586367ms)
+✔ archiving disables owner and delegate policy access and writes; restoring preserves history (223.47653ms)
+✔ metadata is publicly readable even without an access grant (93.169277ms)
+✔ state-changing operations emit parseable events with record identifiers (229.945786ms)
+✔ write-only grants do not imply reads and replacement can downgrade a writer to reader (260.289859ms)
+✔ restore reactivates retained valid grants but not grants revoked while archived (336.289894ms)
+✔ global revoke covers multiple same-owner records, including archived ones, and isolates other patients (514.258836ms)
+✔ Darwin-only fsevents remains optional; esbuild platform packages are retained (3.440825ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4369.599635

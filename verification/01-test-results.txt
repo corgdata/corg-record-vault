@@ -1,0 +1,65 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> corg-record-vault@0.2.0 pretest
+> npm run compile
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> corg-record-vault@0.2.0 compile
+> node scripts/compile.mjs
+
+Compiled MedicalRecordsRegistry: 3732 deployed bytes; solc 0.8.30+commit.73712a01.Emscripten.clang; Paris EVM.
+
+> corg-record-vault@0.2.0 test
+> node --test test/*.test.mjs
+
+This version of µWS is not compatible with your Node.js build:
+
+Error: Cannot find module '../binaries/uws_linux_x64_137.node'
+Require stack:
+- /workspace/scratch/ce06c34ba00b/medical-platform/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+- /workspace/scratch/ce06c34ba00b/medical-platform/node_modules/ganache/dist/node/core.js
+Falling back to a NodeJS implementation; performance may be degraded.
+
+
+✔ vault encrypts records with independent keys, private files and authenticated context (16.032512ms)
+✔ authenticated encryption rejects a modified ciphertext and tag (0.628076ms)
+✔ HTTP/EVM workflow: auth replay, signed update, revocation, isolation and encrypted storage (1425.365293ms)
+✔ local chain, encrypted records and wallet identities survive a clean restart (396.632574ms)
+✔ browser workflow WebCrypto: encrypted read, signed append, revoke and isolation (100.620168ms)
+✔ browser workflow portable AES-GCM: encrypted read, signed append, revoke and isolation (40.241531ms)
+This version of µWS is not compatible with your Node.js build:
+
+Error: Cannot find module '../binaries/uws_linux_x64_137.node'
+Require stack:
+- /workspace/scratch/ce06c34ba00b/medical-platform/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+- /workspace/scratch/ce06c34ba00b/medical-platform/node_modules/ganache/dist/node/core.js
+Falling back to a NodeJS implementation; performance may be degraded.
+
+
+✔ creation records ownership, immutable first version, and owner permissions (563.499109ms)
+✔ unknown records deny access and metadata/version reads reject (159.164544ms)
+✔ record identifiers are patient namespaced; duplicate creation cannot overwrite (239.225104ms)
+✔ zero commitments and ciphertext hashes are rejected on create and append (181.146549ms)
+✔ ungranted callers cannot append or manage permissions or archive (174.690479ms)
+✔ read-only permission allows gateway read authorization but not append (194.443464ms)
+✔ writer appends attributed version without modifying earlier version or gaining administration (333.464639ms)
+✔ compare-and-swap rejects stale and future versions; invalid indices reject (193.010446ms)
+✔ grants reject invalid masks, zero address, and expired grants (142.787125ms)
+✔ grant expires exactly at expiresAt; expired writers cannot append (164.344173ms)
+✔ revocation immediately blocks read and write; a new explicit grant works (247.883277ms)
+✔ global revoke invalidates all patient grants without affecting another patient (325.285766ms)
+✔ archiving disables owner and delegate policy access and writes; restoring preserves history (282.27338ms)
+✔ metadata is publicly readable even without an access grant (109.814743ms)
+✔ state-changing operations emit parseable events with record identifiers (265.074146ms)
+✔ write-only grants do not imply reads and replacement can downgrade a writer to reader (336.569985ms)
+✔ restore reactivates retained valid grants but not grants revoked while archived (320.013075ms)
+✔ global revoke covers multiple same-owner records, including archived ones, and isolates other patients (503.854401ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5048.53878

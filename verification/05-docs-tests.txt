@@ -1,0 +1,70 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> corg-record-vault@0.2.0 pretest
+> npm run check-contract
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> corg-record-vault@0.2.0 check-contract
+> node scripts/check-contract.mjs
+
+Contract drift guard PASS: deployed bytecode matches committed artifact (3732 bytes, including metadata).
+
+> corg-record-vault@0.2.0 test
+> node --test test/*.test.mjs
+
+This version of µWS is not compatible with your Node.js build:
+
+Error: Cannot find module '../binaries/uws_linux_x64_137.node'
+Require stack:
+- /workspace/scratch/ce06c34ba00b/medical-platform/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+- /workspace/scratch/ce06c34ba00b/medical-platform/node_modules/ganache/dist/node/core.js
+Falling back to a NodeJS implementation; performance may be degraded.
+
+
+✔ vault encrypts records with independent keys, private files and authenticated context (31.378895ms)
+✔ authenticated encryption rejects a modified ciphertext and tag (1.043297ms)
+✔ HTTP/EVM workflow: auth replay, signed update, revocation, isolation and encrypted storage (1982.092205ms)
+✔ local chain, encrypted records and wallet identities survive a clean restart (434.362193ms)
+✔ real server boot smoke: patient create/open, clinician signed update, revoke and denial (9394.576798ms)
+ℹ Actual startup entrypoint bound 127.0.0.1; HTTP workflow passed; temporary app/data removed by cleanup.
+✔ browser workflow WebCrypto: encrypted read, signed append, revoke and isolation (185.210919ms)
+✔ browser workflow portable AES-GCM: encrypted read, signed append, revoke and isolation (61.567208ms)
+✔ drift guard accepts exact committed deployed bytecode without rewriting artifact (813.387041ms)
+✔ drift guard rejects changed source and mismatched artifact with nonzero process exit (1983.988858ms)
+This version of µWS is not compatible with your Node.js build:
+
+Error: Cannot find module '../binaries/uws_linux_x64_137.node'
+Require stack:
+- /workspace/scratch/ce06c34ba00b/medical-platform/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+- /workspace/scratch/ce06c34ba00b/medical-platform/node_modules/ganache/dist/node/core.js
+Falling back to a NodeJS implementation; performance may be degraded.
+
+
+✔ creation records ownership, immutable first version, and owner permissions (668.059295ms)
+✔ unknown records deny access and metadata/version reads reject (287.780528ms)
+✔ record identifiers are patient namespaced; duplicate creation cannot overwrite (358.371851ms)
+✔ zero commitments and ciphertext hashes are rejected on create and append (410.38828ms)
+✔ ungranted callers cannot append or manage permissions or archive (252.984018ms)
+✔ read-only permission allows gateway read authorization but not append (267.259787ms)
+✔ writer appends attributed version without modifying earlier version or gaining administration (399.823068ms)
+✔ compare-and-swap rejects stale and future versions; invalid indices reject (330.614575ms)
+✔ grants reject invalid masks, zero address, and expired grants (182.309759ms)
+✔ grant expires exactly at expiresAt; expired writers cannot append (192.749737ms)
+✔ revocation immediately blocks read and write; a new explicit grant works (380.267391ms)
+✔ global revoke invalidates all patient grants without affecting another patient (378.599903ms)
+✔ archiving disables owner and delegate policy access and writes; restoring preserves history (312.975208ms)
+✔ metadata is publicly readable even without an access grant (136.755857ms)
+✔ state-changing operations emit parseable events with record identifiers (317.013779ms)
+✔ write-only grants do not imply reads and replacement can downgrade a writer to reader (394.640325ms)
+✔ restore reactivates retained valid grants but not grants revoked while archived (377.822035ms)
+✔ global revoke covers multiple same-owner records, including archived ones, and isolates other patients (693.976309ms)
+✔ Darwin-only fsevents remains optional; esbuild platform packages are retained (6.108421ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9651.21474

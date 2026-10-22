@@ -1,0 +1,283 @@
+$ mkdir /workspace/scratch/ce06c34ba00b/cleanrooms/final-lqvdmi4o
+$ cd /workspace/scratch/ce06c34ba00b/cleanrooms/final-lqvdmi4o
+$ unzip ../final-candidate.zip
+$ cd corg-record-vault
+$ node --version
+v24.19.0
+
+Exit code: 0
+$ npm --version
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+11.9.0
+
+Exit code: 0
+$ npm ci
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+added 425 packages in 20s
+
+Exit code: 0
+$ npm run compile
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> corg-record-vault@0.2.0 compile
+> node scripts/compile.mjs
+
+Compiled MedicalRecordsRegistry: 3732 deployed bytes; solc 0.8.30+commit.73712a01.Emscripten.clang; Paris EVM.
+
+Exit code: 0
+$ npm run build
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> corg-record-vault@0.2.0 build
+> node scripts/build.mjs
+
+Built Record Vault browser client.
+
+Exit code: 0
+$ npm test
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> corg-record-vault@0.2.0 pretest
+> npm run check-contract
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> corg-record-vault@0.2.0 check-contract
+> node scripts/check-contract.mjs
+
+Contract drift guard PASS: deployed bytecode matches committed artifact (3732 bytes, including metadata).
+
+> corg-record-vault@0.2.0 test
+> node scripts/run-tests.mjs
+
+# ENVIRONMENT NOTE (non-fatal): Node SQLite ExperimentalWarning is informational; SQLite remains enabled.
+# ENVIRONMENT NOTE (non-fatal): Ganache may print "Cannot find module ... uws_*.node" followed by "Falling back to a NodeJS implementation". This pair is a supported JS fallback, not a failed test.
+# Diagnostics are preserved; assertion failures, failed imports and process errors still fail this command.
+TAP version 13
+# This version of µWS is not compatible with your Node.js build:
+# Error: Cannot find module '../binaries/uws_linux_x64_137.node'
+# Require stack:
+# - /workspace/scratch/ce06c34ba00b/cleanrooms/final-lqvdmi4o/corg-record-vault/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+# - /workspace/scratch/ce06c34ba00b/cleanrooms/final-lqvdmi4o/corg-record-vault/node_modules/ganache/dist/node/core.js
+# Falling back to a NodeJS implementation; performance may be degraded.
+# Subtest: vault encrypts records with independent keys, private files and authenticated context
+ok 1 - vault encrypts records with independent keys, private files and authenticated context
+  ---
+  duration_ms: 15.050552
+  type: 'test'
+  ...
+# Subtest: authenticated encryption rejects a modified ciphertext and tag
+ok 2 - authenticated encryption rejects a modified ciphertext and tag
+  ---
+  duration_ms: 1.006309
+  type: 'test'
+  ...
+# Subtest: HTTP/EVM workflow: auth replay, signed update, revocation, isolation and encrypted storage
+ok 3 - HTTP/EVM workflow: auth replay, signed update, revocation, isolation and encrypted storage
+  ---
+  duration_ms: 2074.629931
+  type: 'test'
+  ...
+# Subtest: local chain, encrypted records and wallet identities survive a clean restart
+ok 4 - local chain, encrypted records and wallet identities survive a clean restart
+  ---
+  duration_ms: 451.156124
+  type: 'test'
+  ...
+# Subtest: real server boot smoke: patient create/open, clinician signed update, revoke and denial
+ok 5 - real server boot smoke: patient create/open, clinician signed update, revoke and denial
+  ---
+  duration_ms: 9709.826972
+  type: 'test'
+  ...
+# Actual startup entrypoint bound 127.0.0.1; HTTP workflow passed; temporary app/data removed by cleanup.
+# Subtest: browser workflow WebCrypto: encrypted read, signed append, revoke and isolation
+ok 6 - browser workflow WebCrypto: encrypted read, signed append, revoke and isolation
+  ---
+  duration_ms: 248.996364
+  type: 'test'
+  ...
+# Subtest: browser workflow portable AES-GCM: encrypted read, signed append, revoke and isolation
+ok 7 - browser workflow portable AES-GCM: encrypted read, signed append, revoke and isolation
+  ---
+  duration_ms: 118.411113
+  type: 'test'
+  ...
+# Subtest: drift guard accepts exact committed deployed bytecode without rewriting artifact
+ok 8 - drift guard accepts exact committed deployed bytecode without rewriting artifact
+  ---
+  duration_ms: 813.481357
+  type: 'test'
+  ...
+# Subtest: drift guard rejects changed source and mismatched artifact with nonzero process exit
+ok 9 - drift guard rejects changed source and mismatched artifact with nonzero process exit
+  ---
+  duration_ms: 1542.873551
+  type: 'test'
+  ...
+# This version of µWS is not compatible with your Node.js build:
+# Error: Cannot find module '../binaries/uws_linux_x64_137.node'
+# Require stack:
+# - /workspace/scratch/ce06c34ba00b/cleanrooms/final-lqvdmi4o/corg-record-vault/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+# - /workspace/scratch/ce06c34ba00b/cleanrooms/final-lqvdmi4o/corg-record-vault/node_modules/ganache/dist/node/core.js
+# Falling back to a NodeJS implementation; performance may be degraded.
+# Subtest: creation records ownership, immutable first version, and owner permissions
+ok 10 - creation records ownership, immutable first version, and owner permissions
+  ---
+  duration_ms: 859.020025
+  type: 'test'
+  ...
+# Subtest: unknown records deny access and metadata/version reads reject
+ok 11 - unknown records deny access and metadata/version reads reject
+  ---
+  duration_ms: 314.047465
+  type: 'test'
+  ...
+# Subtest: record identifiers are patient namespaced; duplicate creation cannot overwrite
+ok 12 - record identifiers are patient namespaced; duplicate creation cannot overwrite
+  ---
+  duration_ms: 310.614361
+  type: 'test'
+  ...
+# Subtest: zero commitments and ciphertext hashes are rejected on create and append
+ok 13 - zero commitments and ciphertext hashes are rejected on create and append
+  ---
+  duration_ms: 213.776052
+  type: 'test'
+  ...
+# Subtest: ungranted callers cannot append or manage permissions or archive
+ok 14 - ungranted callers cannot append or manage permissions or archive
+  ---
+  duration_ms: 208.714993
+  type: 'test'
+  ...
+# Subtest: read-only permission allows gateway read authorization but not append
+ok 15 - read-only permission allows gateway read authorization but not append
+  ---
+  duration_ms: 270.234551
+  type: 'test'
+  ...
+# Subtest: writer appends attributed version without modifying earlier version or gaining administration
+ok 16 - writer appends attributed version without modifying earlier version or gaining administration
+  ---
+  duration_ms: 379.534949
+  type: 'test'
+  ...
+# Subtest: compare-and-swap rejects stale and future versions; invalid indices reject
+ok 17 - compare-and-swap rejects stale and future versions; invalid indices reject
+  ---
+  duration_ms: 232.843759
+  type: 'test'
+  ...
+# Subtest: grants reject invalid masks, zero address, and expired grants
+ok 18 - grants reject invalid masks, zero address, and expired grants
+  ---
+  duration_ms: 149.981232
+  type: 'test'
+  ...
+# Subtest: grant expires exactly at expiresAt; expired writers cannot append
+ok 19 - grant expires exactly at expiresAt; expired writers cannot append
+  ---
+  duration_ms: 223.317302
+  type: 'test'
+  ...
+# Subtest: revocation immediately blocks read and write; a new explicit grant works
+ok 20 - revocation immediately blocks read and write; a new explicit grant works
+  ---
+  duration_ms: 323.597915
+  type: 'test'
+  ...
+# Subtest: global revoke invalidates all patient grants without affecting another patient
+ok 21 - global revoke invalidates all patient grants without affecting another patient
+  ---
+  duration_ms: 437.700917
+  type: 'test'
+  ...
+# Subtest: archiving disables owner and delegate policy access and writes; restoring preserves history
+ok 22 - archiving disables owner and delegate policy access and writes; restoring preserves history
+  ---
+  duration_ms: 434.840962
+  type: 'test'
+  ...
+# Subtest: metadata is publicly readable even without an access grant
+ok 23 - metadata is publicly readable even without an access grant
+  ---
+  duration_ms: 137.563007
+  type: 'test'
+  ...
+# Subtest: state-changing operations emit parseable events with record identifiers
+ok 24 - state-changing operations emit parseable events with record identifiers
+  ---
+  duration_ms: 306.052299
+  type: 'test'
+  ...
+# Subtest: write-only grants do not imply reads and replacement can downgrade a writer to reader
+ok 25 - write-only grants do not imply reads and replacement can downgrade a writer to reader
+  ---
+  duration_ms: 389.65492
+  type: 'test'
+  ...
+# Subtest: restore reactivates retained valid grants but not grants revoked while archived
+ok 26 - restore reactivates retained valid grants but not grants revoked while archived
+  ---
+  duration_ms: 461.342958
+  type: 'test'
+  ...
+# Subtest: global revoke covers multiple same-owner records, including archived ones, and isolates other patients
+ok 27 - global revoke covers multiple same-owner records, including archived ones, and isolates other patients
+  ---
+  duration_ms: 855.480549
+  type: 'test'
+  ...
+# Subtest: Darwin-only fsevents remains optional; esbuild platform packages are retained
+ok 28 - Darwin-only fsevents remains optional; esbuild platform packages are retained
+  ---
+  duration_ms: 4.870777
+  type: 'test'
+  ...
+# Subtest: test runner labels environment notices and preserves diagnostic output
+ok 29 - test runner labels environment notices and preserves diagnostic output
+  ---
+  duration_ms: 535.764549
+  type: 'test'
+  ...
+# Subtest: test runner propagates genuine test failure with a nonzero exit
+ok 30 - test runner propagates genuine test failure with a nonzero exit
+  ---
+  duration_ms: 422.400397
+  type: 'test'
+  ...
+1..30
+# tests 30
+# suites 0
+# pass 30
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 10180.508323
+TEST RESULT: PASS (exit 0). Environment notices above are non-fatal.
+
+Exit code: 0
+$ npm start
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> corg-record-vault@0.2.0 start
+> node scripts/start-local.mjs
+
+This version of µWS is not compatible with your Node.js build:
+
+Error: Cannot find module '../binaries/uws_linux_x64_137.node'
+Require stack:
+- /workspace/scratch/ce06c34ba00b/cleanrooms/final-lqvdmi4o/corg-record-vault/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+- /workspace/scratch/ce06c34ba00b/cleanrooms/final-lqvdmi4o/corg-record-vault/node_modules/ganache/dist/node/core.js
+Falling back to a NodeJS implementation; performance may be degraded.
+
+
+CORG medical-record prototype: http://127.0.0.1:3000
+Synthetic local demo only. Demo wallets and local key custody are not production identity/security.
+
+HTTP / 200
+HTTP /api/config 200
+Server stopped; README commands passed from fresh ZIP.

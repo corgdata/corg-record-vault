@@ -1,0 +1,16 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> corg-record-vault@0.2.0 check-contract
+> node scripts/check-contract.mjs
+
+Contract drift guard PASS: deployed bytecode matches committed artifact (3732 bytes, including metadata).
+✔ drift guard accepts exact committed deployed bytecode without rewriting artifact (484.755517ms)
+✔ drift guard rejects changed source and mismatched artifact with nonzero process exit (1076.027412ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1894.076678

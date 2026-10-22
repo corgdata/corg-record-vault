@@ -1,0 +1,6 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+npm error code EBADPLATFORM
+npm error notsup Unsupported platform for fsevents@2.3.2: wanted {"os":"darwin"} (current: {"os":"linux"})
+npm error notsup Valid os:  darwin
+npm error notsup Actual os: linux
+npm error A complete log of this run can be found in: /root/.npm/_logs/2026-10-21T23_59_39_011Z-debug-0.log
