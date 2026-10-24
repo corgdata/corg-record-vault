@@ -113,3 +113,12 @@ The lockfile intentionally marks Ganache's Darwin-only `fsevents@2.3.2` as optio
 - [EIP-712 typed structured data](https://eips.ethereum.org/EIPS/eip-712)
 - [Node cryptography documentation](https://nodejs.org/api/crypto.html)
 
+
+## Citation
+
+CORG Record Vault (prototype code): https://github.com/corgdata/corg-record-vault
+
+Related works:
+
+- Governed synthetic genetic pool: simulation pipeline and validation outputs (code and data deposit). https://doi.org/10.5281/zenodo.23555828
+- An open methods and data description for a governed synthetic genetic pool simulated with msprime. https://doi.org/10.5281/zenodo.23599579
