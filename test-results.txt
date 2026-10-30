@@ -1,3 +1,4 @@
+SNAPSHOT: output of a single local test run (npm test, corg-record-vault v0.2.1), committed 2026-10-22 in commit 1657949a35. This file is a frozen record of that run, not a statement of current test state; CI results are the current source.
 
 > corg-record-vault@0.2.1 pretest
 > npm run check-contract
